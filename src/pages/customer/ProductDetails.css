@@ -1,0 +1,352 @@
+/* ============================================================
+   PRODUCT DETAILS PAGE — CLEAN TWO-COLUMN LAYOUT
+   All sections use normal document flow. No negative margins.
+   No fixed heights on content containers.
+   ============================================================ */
+
+/* ------ Page wrapper ------ */
+.product-details-page {
+  padding-bottom: 3rem;
+  overflow-x: hidden;
+  text-align: left; /* override any inherited center-align */
+}
+
+/* ------ Back link ------ */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--text-main);
+}
+
+/* ------ Two-column grid ------ */
+.product-details-grid {
+  display: grid;
+  grid-template-columns: 46% 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ------ LEFT: Gallery column ------ */
+.product-gallery {
+  min-width: 0;
+}
+
+.main-image-wrap {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--bg-muted);
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border);
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-float-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.thumb-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.thumb-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--border);
+  padding: 0;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  background: none;
+}
+
+.thumb-btn:hover {
+  border-color: var(--border-strong);
+}
+
+.thumb-btn.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ------ RIGHT: Info panel ------ */
+.product-info-panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  /* No fixed heights, no position:absolute on children */
+}
+
+/* Category + stock badge row */
+.product-info-panel > .flex:first-child {
+  margin-bottom: 0.625rem;
+}
+
+/* ------ Product title ------ */
+.product-main-title {
+  font-size: 2rem;          /* ~32px — readable, not overwhelming */
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-main);
+  margin: 0 0 0.75rem 0;   /* clear bottom margin before rating row */
+  word-break: break-word;
+}
+
+/* ------ Rating + distance row ------ */
+.product-info-panel > .flex.items-center.gap-3 {
+  margin-bottom: 0; /* spacing handled by pricing-box margin-top */
+}
+
+/* ------ Pricing box ------ */
+.pricing-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  /* Margin-top set via Tailwind mt-4 in JSX — that's 1rem */
+  padding: 1.25rem;
+}
+
+/* Price + old price row */
+.pricing-box > .flex.items-baseline {
+  margin-bottom: 0;
+}
+
+/* ------ Bargaining callout box ------ */
+.bargaining-callout-box {
+  margin-top: 0.875rem;
+  padding: 0.75rem 1rem;
+  background: var(--bargain-light);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.bargaining-callout-box .flex {
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.bargaining-callout-box .flex > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ------ Quantity + Add to Cart row ------ */
+.action-buttons-stack {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Quantity selector */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-muted);
+  overflow: hidden;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.qty-btn {
+  width: 38px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.qty-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.qty-val {
+  min-width: 32px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  padding: 0 0.25rem;
+}
+
+.add-cart-btn {
+  height: 44px;
+}
+
+/* ------ Description section ------ */
+.product-desc-section {
+  margin-top: 1.75rem;  /* clear gap after pricing box */
+  padding-top: 0;
+}
+
+.product-desc-section h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.product-desc-section p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ------ Fulfillment / delivery cards ------ */
+.fulfillment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.fulfillment-item {
+  display: flex;
+  align-items: flex-start;   /* top-align icon with text block */
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  transition: border-color var(--transition-fast);
+}
+
+.fulfillment-item:hover {
+  border-color: var(--border-strong);
+}
+
+.fulfillment-item > svg {
+  flex-shrink: 0;
+  margin-top: 1px; /* fine-tune icon vertical centering against first text line */
+}
+
+.fulfillment-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;  /* visible gap between heading and subtext */
+  min-width: 0;
+}
+
+.fulfillment-item span.font-semibold {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.fulfillment-item span.text-xs.text-muted {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ------ Seller summary card ------ */
+.seller-summary-card {
+  border: 1px solid var(--border);
+  margin-top: 1.5rem;   /* clear gap after delivery cards */
+}
+
+.seller-avatar-sm {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablet: narrow two-column */
+@media (max-width: 1024px) {
+  .product-details-grid {
+    grid-template-columns: 45% 1fr;
+    gap: 2rem;
+  }
+
+  .product-main-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Phablet / small tablet: single column stacked */
+@media (max-width: 760px) {
+  .product-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .product-main-title {
+    font-size: 1.4rem;
+  }
+
+  .fulfillment-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile: single column, stack delivery cards */
+@media (max-width: 480px) {
+  .fulfillment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons-stack {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quantity-selector {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .product-main-title {
+    font-size: 1.25rem;
+  }
+}

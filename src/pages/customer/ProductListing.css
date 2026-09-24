@@ -1,0 +1,268 @@
+/* ============================================================
+   PRODUCT LISTING PAGE – LAYOUT SYSTEM
+   Defines: page wrapper, two-column layout, 4-column product
+   grid, filter sidebar controls, catalog header, and responsive
+   breakpoints. All grid definitions live here – do not add
+   competing grid rules elsewhere.
+   ============================================================ */
+
+/* ------ Page wrapper ------ */
+.product-listing-page {
+  overflow-x: hidden;
+  padding-bottom: 3rem;
+  text-align: left;
+}
+
+/* ------ Catalog header (title + description) ------ */
+.listing-header {
+  margin-bottom: 2rem;
+}
+
+.listing-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+/* ------ Two-column layout: sidebar | main ------ */
+.listing-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+/* ------ Sidebar ------ */
+.listing-sidebar {
+  min-width: 0;
+}
+
+.filter-card {
+  position: sticky;
+  top: 90px;
+}
+
+/* Filter group spacing */
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+/* Filter group label */
+.filter-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Price inputs row */
+.price-inputs-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.price-inputs-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.price-inputs-row input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Rating select */
+.filter-select {
+  width: 100%;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  appearance: auto;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Radius slider */
+.radius-slider {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Category pill list */
+.category-pill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.category-filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--text-main);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  text-align: left;
+}
+
+.category-filter-btn:hover {
+  background: var(--bg-muted);
+}
+
+.category-filter-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.count-badge {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  background: rgba(0, 0, 0, 0.07);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-full);
+  margin-left: auto;
+}
+
+.category-filter-btn.active .count-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* Bargain toggle */
+.bargain-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* ------ Main area ------ */
+.listing-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ------ Search + sort bar ------ */
+.search-and-sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-and-sort-bar .search-input-wrap {
+  flex: 1;
+  min-width: 160px;
+}
+
+.sort-select {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sort-select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* ------ 4-column product grid ------ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Ensure grid cells stretch to fill so cards align at bottom */
+.product-grid > * {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------ Responsive breakpoints ------ */
+
+/* Tablet: sidebar collapses, grid shows 2 columns */
+@media (max-width: 1199px) {
+  .listing-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .listing-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .filter-card {
+    position: static;
+  }
+
+  .listing-sidebar {
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 767px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .search-and-sort-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+}

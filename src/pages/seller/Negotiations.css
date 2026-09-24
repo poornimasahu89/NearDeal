@@ -1,0 +1,22 @@
+.neg-product-img {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.history-bubble {
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.35rem;
+}
+
+.bubble-customer {
+  background: var(--bargain-light);
+  border-left: 3px solid var(--bargain);
+}
+
+.bubble-seller {
+  background: var(--bg-muted);
+  border-left: 3px solid var(--accent);
+}

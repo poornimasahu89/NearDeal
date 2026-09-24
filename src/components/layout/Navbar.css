@@ -1,0 +1,341 @@
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  border-bottom: 1px solid var(--border);
+}
+
+.user-account-menu {
+  position: relative;
+}
+
+.user-profile-trigger {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.user-profile-trigger:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+}
+
+.user-name-role {
+  max-width: 110px;
+  line-height: 1.15;
+}
+
+.user-display-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.user-role-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.account-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 210px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-header {
+  padding: 0.5rem 1rem 0.6rem;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.35rem 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: background var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background: var(--bg-muted);
+}
+
+.dropdown-item.logout-btn {
+  color: var(--danger);
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.dropdown-item.logout-btn:hover {
+  background: var(--danger-light);
+}
+
+.btn-signin {
+  padding: 0.4rem 0.85rem;
+  color: var(--text-main);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.btn-signin:hover {
+  background: var(--bg-muted);
+}
+
+.btn-signup {
+  padding: 0.4rem 0.95rem;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.btn-signup:hover {
+  background: var(--primary-hover);
+}
+
+
+.navbar-main {
+  padding: 0.75rem 0;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.brand-icon-box {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.45rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+  display: block;
+}
+
+.brand-subtitle {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.location-pill {
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  max-width: 250px;
+}
+
+.location-text-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.location-title {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.location-val {
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.radius-dropdown {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.35rem;
+  font-size: 0.75rem;
+  outline: none;
+}
+
+.nav-search-bar {
+  position: relative;
+  flex: 1;
+  max-width: 380px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+/* The search icon doubles as the submit button (same position/visuals) */
+.search-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.search-submit-btn:hover {
+  color: var(--accent);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.85rem 0.5rem 2.25rem;
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.search-input:focus {
+  background: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.nav-link {
+  color: var(--text-main);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  background: var(--bg-muted);
+}
+
+.nav-link-bargain {
+  color: var(--bargain-foreground);
+  background: var(--bargain-light);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+.nav-btn-portal {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+.nav-btn-admin {
+  background: var(--secondary);
+  color: #ffffff;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+.cart-btn {
+  position: relative;
+  padding: 0.45rem;
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Rules for Tablet & Mobile (1024px, 768px, 480px, 375px) */
+@media (max-width: 1024px) {
+  .nav-search-bar {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 840px) {
+  .nav-search-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .location-pill {
+    display: none;
+  }
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 1.1rem;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .nav-actions {
+    gap: 0.5rem;
+  }
+}

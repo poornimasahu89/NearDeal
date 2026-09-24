@@ -1,0 +1,15 @@
+.roster-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.admin-kpi-card {
+  border-top: 3px solid var(--border);
+}
+
+.admin-kpi-card:nth-child(1) { border-top-color: var(--primary); }
+.admin-kpi-card:nth-child(2) { border-top-color: var(--secondary); }
+.admin-kpi-card:nth-child(3) { border-top-color: var(--accent); }
+.admin-kpi-card:nth-child(4) { border-top-color: var(--bargain); }

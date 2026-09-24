@@ -1,0 +1,15 @@
+.offer-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.kpi-card {
+  border-top: 3px solid var(--border);
+}
+
+.kpi-card:nth-child(1) { border-top-color: var(--accent); }
+.kpi-card:nth-child(2) { border-top-color: #10b981; }
+.kpi-card:nth-child(3) { border-top-color: var(--secondary); }
+.kpi-card:nth-child(4) { border-top-color: var(--bargain); }

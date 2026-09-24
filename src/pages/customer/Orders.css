@@ -1,0 +1,13 @@
+.order-icon-wrap {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-items-stack {
+  max-width: 550px;
+}
