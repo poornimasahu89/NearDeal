@@ -24,14 +24,15 @@ coverage/
 *.lcov
 .nyc_output/
 
-# Local handovers, archives and scratch scripts
-backend-handover/
+# Local handovers, archives and scratch scripts (root only)
+/backend-handover/
 *.zip
-replace_script.py
+/replace_script.py
 
-# Local planning documents kept out of the published repository layout
-Detail_Project.md
-SRS_*.md
+# Legacy local planning documents kept at the repository root only.
+# Anchored so their published copies inside docs/ are tracked.
+/Detail_Project.md
+/SRS_*.md
 
 # Editor / OS noise
 .DS_Store
