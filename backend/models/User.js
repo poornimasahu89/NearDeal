@@ -27,6 +27,14 @@ const userSchema = new mongoose.Schema(
       enum: ['CUSTOMER', 'SELLER', 'ADMIN'],
       default: 'CUSTOMER',
     },
+    // Suspension is enforced by `protect` and by login, so revoking marketplace
+    // access does not depend on the user's JWT having expired. Existing accounts
+    // predate the field and are read as active.
+    status: {
+      type: String,
+      enum: ['ACTIVE', 'SUSPENDED'],
+      default: 'ACTIVE',
+    },
     location: {
       // GeoJSON Point
       type: {
